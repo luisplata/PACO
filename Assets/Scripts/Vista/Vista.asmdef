@@ -1,0 +1,17 @@
+{
+    "name": "Vista",
+    "references": [
+        "GUID:28b37078c35951a42b1998eee061dddd",
+        "GUID:4005dde7f4407ba448f522d73958ea6a",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
