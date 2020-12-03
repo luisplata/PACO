@@ -8,8 +8,13 @@ public class BuscarCartasDesdeUnArchivoDeTexto : IBuscadorDeCartasGuardadas
     {
         //Posiblemte aqui es donde busque desde Playfab o alguna base de datos externa
         List<ICarta> listaCartas = new List<ICarta>();
-
-        var reader = new StreamReader(File.OpenRead(@"./nuncanunca.csv"));
+        string _rutaArchivo = @"./nuncanunca.csv";
+        //creando el archivo si es necesario
+        if (!File.Exists(_rutaArchivo))
+        {
+            File.Create(_rutaArchivo);
+        }
+        var reader = new StreamReader(File.OpenRead(_rutaArchivo));
         while (!reader.EndOfStream)
         {
             var line = reader.ReadLine();
