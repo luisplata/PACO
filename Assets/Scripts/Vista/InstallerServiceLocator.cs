@@ -10,7 +10,7 @@ public class InstallerServiceLocator : MonoBehaviour
         ServiceLocator.Instance.RegisterService<IGuardadoDeGeneros>(generos);
         ServiceLocator.Instance.RegisterService<ICreadorDeBaraja>(generos);
 #if UNITY_WEBGL
-        var buscador = new BuscarCartasDesdeUnArchivoDeTexto();
+        var buscador = new BusquedaDeCartasParaLaWeb();
 #elif UNITY_ANDROID
         var buscador = new BuscarCartasParaAndroid();
 #else
