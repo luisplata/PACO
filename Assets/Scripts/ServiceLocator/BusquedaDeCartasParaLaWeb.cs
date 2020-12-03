@@ -9,7 +9,7 @@ public class BusquedaDeCartasParaLaWeb : IBuscadorDeCartasGuardadas
         
         for(var i = 0; i < 100; i++)
         {
-            listaCartas.Add(new Carta(genero, $"nunca nunca... {i}"));
+            listaCartas.Add(new Carta(genero, $"del genero {genero.Nombre} nunca nunca... {i}"));
         }
 
         return listaCartas;
