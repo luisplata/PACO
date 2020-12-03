@@ -1,7 +1,6 @@
-name: CompilerAndBuild
+name: GenerandoBuilds
 
 on:
-  pull_request: {}
   push: { branches: [main] }
 
 env:
@@ -14,13 +13,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        projectPath:
+          - ./
         unityVersion:
           - 2019.4.10f1
         targetPlatform:
-          - Android # Build an Android .apk standalone app.
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+          - Android #Android
           - WebGL # WebGL.
     steps:
-      - uses: webbertakken/unity-request-activation-file@v2.0-alpha-1
       - uses: actions/checkout@v2
         with:
           lfs: true
@@ -31,23 +32,13 @@ jobs:
           restore-keys: |
             Library-${{ matrix.projectPath }}-
             Library-
-      - uses: webbertakken/unity-test-runner@v1.3
-        id: testRunner
-        with:
-          projectPath: ${{ matrix.projectPath }}
-          unityVersion: ${{ matrix.unityVersion }}
-      - uses: actions/upload-artifact@v1
-        with:
-          name: Test results (all modes)
-          path: ${{ steps.testRunner.outputs.artifactsPath }}
       - uses: webbertakken/unity-builder@v0.10
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
-          versioning: Semantic
           customParameters: '-myParameter myValue -myBoolean -ThirdParameter andItsValue'
       - uses: actions/upload-artifact@v1
         with:
-          name: Compilacion
+          name: Build
           path: build
