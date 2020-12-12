@@ -9,7 +9,7 @@ public class InstallerServiceLocator : MonoBehaviour
         var generos = new GuardadoDeGeneroService();
         ServiceLocator.Instance.RegisterService<IGuardadoDeGeneros>(generos);
         ServiceLocator.Instance.RegisterService<ICreadorDeBaraja>(generos);
-        var buscador = new BusquedaDeCartasParaLaWeb();
+        var buscador = new BusquedaDeCartasDesdeWebService();
         ServiceLocator.Instance.RegisterService<IBuscadorDeCartasGuardadas>(buscador);
         SceneManager.LoadScene(1);
     }

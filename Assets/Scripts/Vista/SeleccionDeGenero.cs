@@ -21,14 +21,11 @@ public class SeleccionDeGenero : MonoBehaviour, ISeleccionadorDeGeneroMono
     {
         logica = new LogicaDeSeleccionadorDeGenero(this, listaDeGenerosSeleccionables);
         botonDeContinuar.onClick.AddListener(() => {
-            if (logica.ListaDeGenerosSeleccionados())
-            {
-                IrseHaciaLaEscenaDelJuego();
-            }
+            logica.ListaDeGenerosSeleccionados();
         });
     }
 
-    private void IrseHaciaLaEscenaDelJuego()
+    public void IrseHaciaLaEscenaDelJuego()
     {
         SceneManager.LoadScene(2);
     }

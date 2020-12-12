@@ -13,7 +13,7 @@ internal class LogicaDeSeleccionadorDeGenero
         this.listaDeGenerosSeleccionables = listaDeGenerosSeleccionables;
     }
 
-    public bool ListaDeGenerosSeleccionados()
+    public void ListaDeGenerosSeleccionados()
     {
         List<IGenero> lista = new List<IGenero>();
 
@@ -31,11 +31,11 @@ internal class LogicaDeSeleccionadorDeGenero
         if (lista.Count <= 0)
         {
             seleccionadorDeGeneroMono.MostrarErrorDeListaDeGeneros("Cantidad de generos seleccionados "+lista.Count);
-            return false;
+            return;
         }
 
         ServiceLocator.Instance.GetService<IGuardadoDeGeneros>().GuardarGeneros(lista);
-
-        return true;
+        
+        seleccionadorDeGeneroMono.IrseHaciaLaEscenaDelJuego();
     }
 }

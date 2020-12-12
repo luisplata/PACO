@@ -6,6 +6,10 @@ public class GuardadoDeGeneroService : IGuardadoDeGeneros, ICreadorDeBaraja
 
     public void GuardarGeneros(List<IGenero> generos)
     {
+        if(generos.Count <= 0)
+        {
+            throw new ListaDeGenerosVaciaException("La lista de Generos esta vacia, debe seleccionar alguno para cargar el juego");
+        }
         GenerosGuardados = new List<IGenero>();
         foreach(IGenero genero in generos)
         {

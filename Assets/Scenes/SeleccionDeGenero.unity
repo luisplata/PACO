@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36c5e07db4d69449b85922cf3a3a623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreGenero: Dificil
+  nombreGenero: Picante
 --- !u!114 &122603967
 MonoBehaviour:
   m_ObjectHideFlags: 0
