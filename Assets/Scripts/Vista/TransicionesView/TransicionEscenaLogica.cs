@@ -9,29 +9,28 @@ public class TransicionEscenaLogica
     private bool hasEnter;
     private Image cortina;
     private float curtOff;
-    
 
-    public TransicionEscenaLogica(ITransicionEscenaMono transicionEscenaMono, bool hasEnter, Image cortina)
+    public int IndexScene { get; private set; }
+
+    public TransicionEscenaLogica(ITransicionEscenaMono transicionEscenaMono, Image cortina)
     {
         this.transicionEscenaMono = transicionEscenaMono;
-        this.hasEnter = hasEnter;
         Assert.IsNotNull(cortina, "La cortina, osea la imagen, es nula. Agregala al Script de la transicion");
         this.cortina = cortina;
         curtOff = this.hasEnter ? 1 : 0;
         this.cortina.material.SetFloat("_Cutoff", curtOff);
     }
 
-    public void OnTransicion()
+
+    public void OnTransicionExit(int indexScene)
     {
-        
-        if (hasEnter)
-        {
-            ComienzaTransicionEntrada().WrapErrors();
-        }
-        else
-        {
-            ComienzaTransicionSalida().WrapErrors();
-        }
+        IndexScene = indexScene;
+        ComienzaTransicionSalida().WrapErrors();
+    }
+
+    public void OnTransicionEnter()
+    {
+        ComienzaTransicionEntrada().WrapErrors();
     }
 
     private async Task ComienzaTransicionEntrada()
@@ -42,7 +41,6 @@ public class TransicionEscenaLogica
             curtOff -= 0.1f;
             cortina.material.SetFloat("_Cutoff", curtOff);
         }
-        transicionEscenaMono.CambiarDeEscena();
     }
 
     private async Task ComienzaTransicionSalida()
@@ -54,7 +52,6 @@ public class TransicionEscenaLogica
             cortina.material.SetFloat("_Cutoff", curtOff);
         }
         await Task.Delay(TimeSpan.FromSeconds(2));
-        transicionEscenaMono.CambiarDeEscena();
+        transicionEscenaMono.CambiarDeEscena(IndexScene);
     }
 }
-
