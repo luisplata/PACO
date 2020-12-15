@@ -3,11 +3,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
+public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono, ITransicionEscenaMono
 {
     [SerializeField] private Button seleccionDeCarta, irHaciaPantallaDeEleccionDeGenero;
     [SerializeField] private TextMeshProUGUI texto;
     private LogicaDelSeleccionadorDeCarta logica;
+    private TransicionEscenaLogica logicaTransicion;
+    [SerializeField] bool hasEnter;
+    [SerializeField] Image cortina;
+
+    public void CambiarDeEscena()
+    {
+        
+    }
 
     public void ColocarTextoDeLaCartaSeleccionada(ICarta carta)
     {
@@ -18,6 +26,8 @@ public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
     void Start()
     {
         logica = new LogicaDelSeleccionadorDeCarta(this);
+        logicaTransicion = new TransicionEscenaLogica(this, hasEnter, cortina);
+        logicaTransicion.OnTransicion();
         seleccionDeCarta.onClick.AddListener(() =>
         {
             logica.SeleccionaUnaCarta();
