@@ -10,9 +10,7 @@ public class Primero : MonoBehaviour, IVistaGenero
     // Start is called before the first frame update
     void Start()
     {
-        Genero = new Genero();
-        //debo buscar llenar el genero con datos del servidor
-        Genero.Nombre = nombreGenero;
+        Genero = new Genero(nombreGenero);
 
     }
 }

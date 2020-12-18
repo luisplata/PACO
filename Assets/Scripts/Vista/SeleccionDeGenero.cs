@@ -6,36 +6,34 @@ using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SeleccionDeGenero : MonoBehaviour, ISeleccionadorDeGeneroMono
+public abstract class SeleccionDeGenero : MonoBehaviour, ISeleccionadorDeGeneroMono
 {
-    [SerializeField] private List<Toggle> listaDeGenerosSeleccionables;
-    [SerializeField] private Button botonDeContinuar;
-    private LogicaDeSeleccionadorDeGenero logica;
+    [SerializeField] protected List<Toggle> listaDeGenerosSeleccionables;
+    [SerializeField] protected Button botonDeContinuar, botonAtras;
 
     public void MostrarErrorDeListaDeGeneros(string mensajeDeError)
     {
         Debug.LogError(mensajeDeError);
     }
-    private void Awake()
+    protected virtual void Awake()
     {
         ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion();
     }
 
     private void Start()
     {
-        logica = new LogicaDeSeleccionadorDeGenero(this, listaDeGenerosSeleccionables);
         botonDeContinuar.onClick.AddListener(() => {
-            logica.ListaDeGenerosSeleccionados();
+            LoQueDebeHacerElBotonCuandoTerminenDeSeleccionarLosGeneros();
+        });
+        botonAtras.onClick.AddListener(() => {
+            LoQueDebeHacerElBotonCuandoQueremosIrHaciaAtras();
         });
     }
 
-    public void IrseHaciaLaEscenaDelJuego()
-    {
-        ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(2);
-    }
+    internal abstract void LoQueDebeHacerElBotonCuandoQueremosIrHaciaAtras();
+    protected abstract void LoQueDebeHacerElBotonCuandoTerminenDeSeleccionarLosGeneros();
 
-    public void CambiarDeEscena()
-    {
-        SceneManager.LoadScene(2);
-    }
+    public abstract void IrseHaciaLaEscenaDelJuego();
+
+    public abstract void CambiarDeEscena();
 }

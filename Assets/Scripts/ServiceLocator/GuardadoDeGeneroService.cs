@@ -29,4 +29,14 @@ public class GuardadoDeGeneroService : IGuardadoDeGeneros, ICreadorDeBaraja
         }
         return listaDeCartas;
     }
+
+    public List<ICarta> CrearOpcionesDeRuletaPorGenero(List<IGenero> generosGuardados)
+    {
+        List<ICarta> listaDeCartas = new List<ICarta>();
+        foreach (IGenero genero in generosGuardados)
+        {
+            listaDeCartas.AddRange(new Baraja(ServiceLocator.Instance.GetService<IBuscadorDeTextosParaRuleta>().BuscarTextosPorGenero(genero)).Cartas);
+        }
+        return listaDeCartas;
+    }
 }

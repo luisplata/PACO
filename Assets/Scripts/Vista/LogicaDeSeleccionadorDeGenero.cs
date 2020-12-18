@@ -17,7 +17,7 @@ internal class LogicaDeSeleccionadorDeGenero
     {
         List<IGenero> lista = new List<IGenero>();
 
-        Assert.IsTrue(listaDeGenerosSeleccionables.Count > 0,"No haz colocado en la lista publica los generos de la vista");
+        Assert.IsTrue(listaDeGenerosSeleccionables.Count > 0,"No haz colocado en la lista publica los generos para la ruleta de la vista");
 
         foreach (Toggle toggle in listaDeGenerosSeleccionables)
         {
