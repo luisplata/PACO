@@ -15,7 +15,7 @@ public class LogicaDeLaSeleccionDeJuego : MonoBehaviour, ILogicaParaSeleccionarJ
 
     private void Awake()
     {
-        Screen.orientation = ScreenOrientation.Landscape;
+        Screen.orientation = ScreenOrientation.Portrait;
     }
 
     private void Start()
