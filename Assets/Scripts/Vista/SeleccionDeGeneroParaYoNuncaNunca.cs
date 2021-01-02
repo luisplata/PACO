@@ -1,13 +1,9 @@
-﻿using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SeleccionDeGeneroParaYoNuncaNunca : SeleccionDeGenero
 {
     private LogicaDeSeleccionadorDeGenero logica;
-
-    public override void CambiarDeEscena()
-    {
-        SceneManager.LoadScene(2);
-    }
 
     public override void IrseHaciaLaEscenaDelJuego()
     {
@@ -19,6 +15,11 @@ public class SeleccionDeGeneroParaYoNuncaNunca : SeleccionDeGenero
         logica = new LogicaDeSeleccionadorDeGenero(this, listaDeGenerosSeleccionables);
 
         base.Awake();
+    }
+
+    private void Update()
+    {
+        logica.DeboIrHaciaAtras(Input.GetKeyDown(KeyCode.Escape));
     }
 
     protected override void LoQueDebeHacerElBotonCuandoTerminenDeSeleccionarLosGeneros()

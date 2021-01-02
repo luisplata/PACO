@@ -17,11 +17,10 @@ public class LogicaDelJuegoPictonary
     private int controlDePasos;
     private float tiempoMaximoPorPartida;
     private IBaraja baraja;
-    private int maxDeTragos;
-    private float intervalos;
+    private float tiempoDeAumentoDeTrago, tiempoParametrizadoParaCadaAumento;
     private int cantidadDeTragosAcumulados;
 
-    public LogicaDelJuegoPictonary(IReglasDelJuegoPictonary reglasDelJuegoPictonary, TextMeshProUGUI cantidadDeTragos, TextMeshProUGUI cronometro, TextMeshProUGUI loQueTieneQueDibujar, Image iconoCerveza, Animator animaciones, float tiempoMaximoPorPartida, int maxDeTragos)
+    public LogicaDelJuegoPictonary(IReglasDelJuegoPictonary reglasDelJuegoPictonary, TextMeshProUGUI cantidadDeTragos, TextMeshProUGUI cronometro, TextMeshProUGUI loQueTieneQueDibujar, Image iconoCerveza, Animator animaciones, float tiempoMaximoPorPartida, float tiempoParametrizado)
     {
         this.reglasDelJuegoPictonary = reglasDelJuegoPictonary;
         this.cantidadDeTragos = cantidadDeTragos;
@@ -30,8 +29,7 @@ public class LogicaDelJuegoPictonary
         this.iconoCerveza = iconoCerveza;
         this.animaciones = animaciones;
         this.tiempoMaximoPorPartida = tiempoMaximoPorPartida;
-        this.maxDeTragos = maxDeTragos;
-        intervalos = tiempoMaximoPorPartida / maxDeTragos;
+        this.tiempoParametrizadoParaCadaAumento = tiempoParametrizado;
 
         SetearTextoDeInicio();
 
@@ -60,6 +58,7 @@ public class LogicaDelJuegoPictonary
         if (controlDePasos == 1 && clickDisponible)
         {
             tiempoTranscurrido += deltaTime;
+            tiempoDeAumentoDeTrago += deltaTime;
             cronometro.text = SeteandoTextoParaCronometro();
             if(tiempoTranscurrido >= tiempoMaximoPorPartida)
             {
@@ -68,8 +67,12 @@ public class LogicaDelJuegoPictonary
             }
             else
             {
-                cantidadDeTragosAcumulados = (int)(tiempoTranscurrido / intervalos) + 1;
-                cantidadDeTragos.text = SeteandoCantidadDeTragosAcumulados();
+                if(tiempoDeAumentoDeTrago >= tiempoParametrizadoParaCadaAumento)
+                {
+                    tiempoDeAumentoDeTrago = 0;
+                    cantidadDeTragosAcumulados++;
+                    cantidadDeTragos.text = SeteandoCantidadDeTragosAcumulados();
+                }
             }
         }
     }

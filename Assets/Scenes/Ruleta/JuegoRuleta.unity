@@ -1090,6 +1090,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonBack
       objectReference: {fileID: 0}
+    - target: {fileID: 4535485166738957931, guid: a2424a41d17a7534691a83968733e9ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2424a41d17a7534691a83968733e9ea, type: 3}
 --- !u!224 &1971999584 stripped
@@ -1098,18 +1103,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1971999583}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1971999585 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4535485166738957929, guid: a2424a41d17a7534691a83968733e9ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 1971999583}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1995997687
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,5 +1194,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seleccionDeCarta: {fileID: 812987066}
-  irHaciaPantallaDeEleccionDeGenero: {fileID: 1971999585}
   texto: {fileID: 1227491141}

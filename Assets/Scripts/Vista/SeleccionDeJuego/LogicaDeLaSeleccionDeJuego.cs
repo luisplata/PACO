@@ -8,10 +8,6 @@ public class LogicaDeLaSeleccionDeJuego : MonoBehaviour, ILogicaParaSeleccionarJ
     [SerializeField] private List<Juego> listaDeJuegos;
     private ILogicaParaSeleccionarJuego seleccionadorDeJuego;
 
-    public void SalirDelJuego()
-    {
-        ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(-1);
-    }
 
     private void Awake()
     {

@@ -78,4 +78,10 @@ public class LogicaDelSeleccionadorDeCarta
         }
         texto.text = cartaTomada.Texto;
     }
+
+    public void DeboIrHaciaAtras(bool deboIrmeHAciaAtras)
+    {
+        if (deboIrmeHAciaAtras)
+            ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(1);
+    }
 }

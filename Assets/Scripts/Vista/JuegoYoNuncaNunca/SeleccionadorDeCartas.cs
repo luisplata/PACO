@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
 {
-    [SerializeField] private Button seleccionDeCarta, irHaciaPantallaDeEleccionDeGenero;
+    [SerializeField] private Button seleccionDeCarta;
     [SerializeField] private TextMeshProUGUI texto;
     [SerializeField] private List<Sprite> cartasPorGenero;
     [SerializeField] private List<Sprite> revezCartasPorGenero;
@@ -27,10 +27,11 @@ public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
         {
             logica.SeleccionaUnaCarta();
         });
-        irHaciaPantallaDeEleccionDeGenero.onClick.AddListener(() =>
-        {
-            ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(1);
-        });
+    }
+
+    private void Update()
+    {
+        logica.DeboIrHaciaAtras(Input.GetKeyDown(KeyCode.Escape));
     }
 
     public void MostrarTexto() => logica.ColocarTextoDeLaCartaSeleccionada();

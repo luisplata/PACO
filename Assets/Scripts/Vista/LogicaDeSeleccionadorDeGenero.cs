@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 internal class LogicaDeSeleccionadorDeGenero
 {
-    private ISeleccionadorDeGeneroMono seleccionadorDeGeneroMono;
     private List<Toggle> listaDeGenerosSeleccionables;
+    private SeleccionDeGenero seleccionDeGenero;
 
-    public LogicaDeSeleccionadorDeGenero(ISeleccionadorDeGeneroMono seleccionadorDeGeneroMono, List<Toggle> listaDeGenerosSeleccionables)
+    public LogicaDeSeleccionadorDeGenero(SeleccionDeGenero seleccionDeGenero, List<Toggle> listaDeGenerosSeleccionables)
     {
-        this.seleccionadorDeGeneroMono = seleccionadorDeGeneroMono;
         this.listaDeGenerosSeleccionables = listaDeGenerosSeleccionables;
+        this.seleccionDeGenero = seleccionDeGenero;
     }
 
     public void ListaDeGenerosSeleccionados()
@@ -30,12 +30,18 @@ internal class LogicaDeSeleccionadorDeGenero
 
         if (lista.Count <= 0)
         {
-            seleccionadorDeGeneroMono.MostrarErrorDeListaDeGeneros("Cantidad de generos seleccionados "+lista.Count);
+            seleccionDeGenero.MostrarErrorDeListaDeGeneros("Cantidad de generos seleccionados "+lista.Count);
             return;
         }
 
         ServiceLocator.Instance.GetService<IGuardadoDeGeneros>().GuardarGeneros(lista);
-        
-        seleccionadorDeGeneroMono.IrseHaciaLaEscenaDelJuego();
+
+        seleccionDeGenero.IrseHaciaLaEscenaDelJuego();
+    }
+
+    public void DeboIrHaciaAtras(bool deboIrmeHAciaAtras)
+    {
+        if (deboIrmeHAciaAtras)
+            seleccionDeGenero.LoQueDebeHacerElBotonCuandoQueremosIrHaciaAtras();
     }
 }

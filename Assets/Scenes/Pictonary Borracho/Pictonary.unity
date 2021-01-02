@@ -158,6 +158,7 @@ MonoBehaviour:
   animaciones: {fileID: 68559562}
   botonDeControl: {fileID: 1089721810}
   tiempoMaximoPorPartida: 300
+  tiempoPorCadaAumento: 20
   maxTragos: 10
 --- !u!4 &68559561
 Transform:

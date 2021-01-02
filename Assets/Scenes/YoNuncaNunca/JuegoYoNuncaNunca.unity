@@ -574,7 +574,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seleccionDeCarta: {fileID: 1726344328}
-  irHaciaPantallaDeEleccionDeGenero: {fileID: 1838516726}
   texto: {fileID: 1400755354}
   cartasPorGenero:
   - {fileID: 21300000, guid: 98ecdcfad4a1b1e4286d340d1fefcbfe, type: 3}
@@ -1179,7 +1178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1838516725
 RectTransform:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public abstract class SeleccionDeGenero : MonoBehaviour, ISeleccionadorDeGeneroMono
 {
     [SerializeField] protected List<Toggle> listaDeGenerosSeleccionables;
-    [SerializeField] protected Button botonDeContinuar, botonAtras;
+    [SerializeField] protected Button botonDeContinuar;
 
     public void MostrarErrorDeListaDeGeneros(string mensajeDeError)
     {
@@ -25,15 +25,10 @@ public abstract class SeleccionDeGenero : MonoBehaviour, ISeleccionadorDeGeneroM
         botonDeContinuar.onClick.AddListener(() => {
             LoQueDebeHacerElBotonCuandoTerminenDeSeleccionarLosGeneros();
         });
-        botonAtras.onClick.AddListener(() => {
-            LoQueDebeHacerElBotonCuandoQueremosIrHaciaAtras();
-        });
     }
 
     internal abstract void LoQueDebeHacerElBotonCuandoQueremosIrHaciaAtras();
     protected abstract void LoQueDebeHacerElBotonCuandoTerminenDeSeleccionarLosGeneros();
 
     public abstract void IrseHaciaLaEscenaDelJuego();
-
-    public abstract void CambiarDeEscena();
 }

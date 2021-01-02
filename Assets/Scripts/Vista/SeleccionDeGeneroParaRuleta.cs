@@ -1,13 +1,9 @@
-﻿using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SeleccionDeGeneroParaRuleta : SeleccionDeGenero
 {
     private LogicaDeSeleccionadorDeGenero logica;
-
-    public override void CambiarDeEscena()
-    {
-        SceneManager.LoadScene(1);
-    }
 
     public override void IrseHaciaLaEscenaDelJuego()
     {
@@ -18,7 +14,11 @@ public class SeleccionDeGeneroParaRuleta : SeleccionDeGenero
     {
         logica = new LogicaDeSeleccionadorDeGenero(this, listaDeGenerosSeleccionables);
         base.Awake();
+    }
 
+    private void Update()
+    {
+        logica.DeboIrHaciaAtras(Input.GetKeyDown(KeyCode.Escape));
     }
 
     protected override void LoQueDebeHacerElBotonCuandoTerminenDeSeleccionarLosGeneros()

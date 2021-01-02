@@ -9,13 +9,12 @@ public class ReglasDelJuegoPictonary : MonoBehaviour, IReglasDelJuegoPictonary
     [SerializeField] private Image iconoCerveza;
     [SerializeField] private Animator animaciones;
     [SerializeField] private Button botonDeControl;
-    [SerializeField] private float tiempoMaximoPorPartida;
-    [SerializeField] private int maxTragos;
+    [SerializeField] private float tiempoMaximoPorPartida, tiempoPorCadaAumento;
     private LogicaDelJuegoPictonary logica;
 
     private void Start()
     {
-        logica = new LogicaDelJuegoPictonary(this, cantidadDeTragos, cronometro, loQueTieneQueDibujar, iconoCerveza, animaciones, tiempoMaximoPorPartida, maxTragos);
+        logica = new LogicaDelJuegoPictonary(this, cantidadDeTragos, cronometro, loQueTieneQueDibujar, iconoCerveza, animaciones, tiempoMaximoPorPartida, tiempoPorCadaAumento);
         botonDeControl.onClick.AddListener(() =>
         {
             logica.BotonPresionado();

@@ -27,4 +27,10 @@ public class LogicaParaGirarLaRuleta
     {
         texto.text = carta.Texto;
     }
+
+    public void DeboIrHaciaAtras(bool deboIrmeHAciaAtras)
+    {
+        if(deboIrmeHAciaAtras)
+            ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(3);
+    }
 }

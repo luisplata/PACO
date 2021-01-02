@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GiradorDeRuleta : MonoBehaviour, ISeleccionadorDeCartasMono
 {
-    [SerializeField] private Button seleccionDeCarta, irHaciaPantallaDeEleccionDeGenero;
+    [SerializeField] private Button seleccionDeCarta;
     [SerializeField] private TextMeshProUGUI texto;
     private LogicaParaGirarLaRuleta logica;
 
@@ -22,9 +22,10 @@ public class GiradorDeRuleta : MonoBehaviour, ISeleccionadorDeCartasMono
         {
             logica.SeleccionaUnaOpcion();
         });
-        irHaciaPantallaDeEleccionDeGenero.onClick.AddListener(() =>
-        {
-            ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(3);
-        });
+    }
+
+    private void Update()
+    {
+        logica.DeboIrHaciaAtras(Input.GetKeyDown(KeyCode.Escape));
     }
 }

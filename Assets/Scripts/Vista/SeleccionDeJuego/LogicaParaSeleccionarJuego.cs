@@ -16,7 +16,7 @@
     {
         if (salioDelJuego)
         {
-            logicaParaSeleccionarJuegoMono.SalirDelJuego();
+            ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(-1);
         }
     }
 
