@@ -9,21 +9,10 @@ public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
     [SerializeField] private Button seleccionDeCarta, irHaciaPantallaDeEleccionDeGenero;
     [SerializeField] private TextMeshProUGUI texto;
     [SerializeField] private List<Sprite> cartasPorGenero;
+    [SerializeField] private List<Sprite> revezCartasPorGenero;
     [SerializeField] private Image panelDondeSeMuestraElTexto;
     private LogicaDelSeleccionadorDeCarta logica;
-
-
-    public void ColocarTextoDeLaCartaSeleccionada(ICarta carta)
-    {
-        foreach(Sprite s in cartasPorGenero)
-        {
-            if (s.name.Equals(carta.Genero.Nombre))
-            {
-                panelDondeSeMuestraElTexto.sprite = s;
-            }
-        }
-        texto.text = carta.Texto;
-    }
+    
 
     private void Awake()
     {
@@ -33,7 +22,7 @@ public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
     void Start()
     {
         //
-        logica = new LogicaDelSeleccionadorDeCarta(this);
+        logica = new LogicaDelSeleccionadorDeCarta(this, texto, panelDondeSeMuestraElTexto, cartasPorGenero, revezCartasPorGenero, gameObject.GetComponent<Animator>());
         seleccionDeCarta.onClick.AddListener(() =>
         {
             logica.SeleccionaUnaCarta();
@@ -43,4 +32,7 @@ public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
             ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(1);
         });
     }
+
+    public void MostrarTexto() => logica.ColocarTextoDeLaCartaSeleccionada();
+    public void MostrarTextoRevesDeCarta() => logica.ColocandoElRevezDeLaCarta();
 }

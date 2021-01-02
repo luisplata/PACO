@@ -10,11 +10,6 @@ public class GiradorDeRuleta : MonoBehaviour, ISeleccionadorDeCartasMono
     [SerializeField] private TextMeshProUGUI texto;
     private LogicaParaGirarLaRuleta logica;
 
-    public void ColocarTextoDeLaCartaSeleccionada(ICarta carta)
-    {
-        texto.text = carta.Texto;
-    }
-
     private void Awake()
     {
         ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion();
@@ -22,7 +17,7 @@ public class GiradorDeRuleta : MonoBehaviour, ISeleccionadorDeCartasMono
     // Start is called before the first frame update
     void Start()
     {
-        logica = new LogicaParaGirarLaRuleta(this);
+        logica = new LogicaParaGirarLaRuleta(this, texto);
         seleccionDeCarta.onClick.AddListener(() =>
         {
             logica.SeleccionaUnaOpcion();

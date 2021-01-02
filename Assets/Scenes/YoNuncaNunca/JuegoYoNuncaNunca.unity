@@ -493,6 +493,7 @@ GameObject:
   - component: {fileID: 759224384}
   - component: {fileID: 759224383}
   - component: {fileID: 759224385}
+  - component: {fileID: 759224386}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -512,9 +513,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2143274154}
-  - {fileID: 1726344327}
-  - {fileID: 2053482366}
   - {fileID: 1838516725}
+  - {fileID: 2053482366}
+  - {fileID: 1726344327}
   m_Father: {fileID: 1210303642}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -578,7 +579,29 @@ MonoBehaviour:
   cartasPorGenero:
   - {fileID: 21300000, guid: 98ecdcfad4a1b1e4286d340d1fefcbfe, type: 3}
   - {fileID: 21300000, guid: 96dca79811b39a54b9c13b1e0a3362c8, type: 3}
+  revezCartasPorGenero:
+  - {fileID: 21300000, guid: 188cc42f841865544843d7fdea3e53c1, type: 3}
+  - {fileID: 21300000, guid: c5a529f25a47642478d7e3785d318b22, type: 3}
   panelDondeSeMuestraElTexto: {fileID: 2053482367}
+--- !u!95 &759224386
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759224381}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 684c9adaf4b292849aab11e0459d7b9d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &873504433
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,7 +693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &915888110
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1032,7 +1055,7 @@ GameObject:
   - component: {fileID: 1726344329}
   - component: {fileID: 1726344328}
   m_Layer: 5
-  m_Name: Button
+  m_Name: btnSeleccionar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1051,13 +1074,13 @@ RectTransform:
   m_Children:
   - {fileID: 915888110}
   m_Father: {fileID: 759224382}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115.85, y: -375}
-  m_SizeDelta: {x: 375.53873, y: 87.12646}
-  m_Pivot: {x: 0.17136905, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.000015258789, y: 0.00012207031}
+  m_SizeDelta: {x: 0.000091552734, y: -100.0542}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1726344328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,13 +1137,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1151,7 +1174,7 @@ GameObject:
   - component: {fileID: 1838516727}
   - component: {fileID: 1838516726}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: btnAtras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1170,12 +1193,12 @@ RectTransform:
   m_Children:
   - {fileID: 36592209}
   m_Father: {fileID: 759224382}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -278.1, y: 406.9}
-  m_SizeDelta: {x: 137.51483, y: 84.25877}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 61.78115, y: 406.90002}
+  m_SizeDelta: {x: -366.48517, y: -813.7412}
   m_Pivot: {x: -0.17436735, y: 0.5}
 --- !u!114 &1838516726
 MonoBehaviour:
@@ -1358,7 +1381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.800003, y: 6.100006}
+  m_AnchoredPosition: {x: 0.000015258789, y: -21}
   m_SizeDelta: {x: -62.355835, y: -306.47095}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2053482367
