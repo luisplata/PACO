@@ -51,7 +51,7 @@ public class TransicionEscenaLogica
             curtOff += 0.1f;
             cortina.material.SetFloat("_Cutoff", curtOff);
         }
-        await Task.Delay(TimeSpan.FromSeconds(2));
+        await Task.Delay(TimeSpan.FromSeconds(1));
         if(IndexScene < 0)
         {
             transicionEscenaMono.SalirDelJuego();
