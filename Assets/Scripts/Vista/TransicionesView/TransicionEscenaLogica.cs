@@ -52,6 +52,11 @@ public class TransicionEscenaLogica
             cortina.material.SetFloat("_Cutoff", curtOff);
         }
         await Task.Delay(TimeSpan.FromSeconds(2));
+        if(IndexScene < 0)
+        {
+            transicionEscenaMono.SalirDelJuego();
+            return;
+        }
         transicionEscenaMono.CambiarDeEscena(IndexScene);
     }
 }

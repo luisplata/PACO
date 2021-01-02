@@ -12,6 +12,14 @@
         ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion();
     }
 
+    public void DeseoSalirDelJuego(bool salioDelJuego)
+    {
+        if (salioDelJuego)
+        {
+            logicaParaSeleccionarJuegoMono.SalirDelJuego();
+        }
+    }
+
     public void LoQueDebeHacerElBotonCuandoEsPrecionado(int escena)
     {
         ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(escena);

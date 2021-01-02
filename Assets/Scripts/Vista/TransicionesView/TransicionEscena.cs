@@ -1,4 +1,5 @@
-﻿using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TransicionEscena : ITransicionEscenaMono
@@ -21,6 +22,17 @@ public class TransicionEscena : ITransicionEscenaMono
     public void OnTransicion()
     {
         logicaTransicion.OnTransicionEnter();
+    }
+
+    public void SalirDelJuego()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+
+#if UNITY_ANDROID
+        Application.Quit();
+#endif
     }
 
     public TransicionEscena(Image _cortina)
