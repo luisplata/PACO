@@ -20,13 +20,14 @@ public class LogicaDelSeleccionadorDeCarta
         try
         {
             cartaTomada = baraja.TomarCarta();
-            seleccionadorDeCartasMono.ColocarTextoDeLaCartaSeleccionada(cartaTomada);
         }
         catch(NoHayCartasException e)
         {
             var generosGuardados = ServiceLocator.Instance.GetService<IGuardadoDeGeneros>().GenerosGuardados;
             var cartasPorGenero = ServiceLocator.Instance.GetService<ICreadorDeBaraja>().CrearCartasPorGenero(generosGuardados);
             baraja = new Baraja(cartasPorGenero);
+            cartaTomada = baraja.TomarCarta();
         }
+        seleccionadorDeCartasMono.ColocarTextoDeLaCartaSeleccionada(cartaTomada);
     }
 }
