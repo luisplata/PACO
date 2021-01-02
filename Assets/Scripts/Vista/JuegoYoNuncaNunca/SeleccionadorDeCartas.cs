@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,10 +8,20 @@ public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
 {
     [SerializeField] private Button seleccionDeCarta, irHaciaPantallaDeEleccionDeGenero;
     [SerializeField] private TextMeshProUGUI texto;
+    [SerializeField] private List<Sprite> cartasPorGenero;
+    [SerializeField] private Image panelDondeSeMuestraElTexto;
     private LogicaDelSeleccionadorDeCarta logica;
+
 
     public void ColocarTextoDeLaCartaSeleccionada(ICarta carta)
     {
+        foreach(Sprite s in cartasPorGenero)
+        {
+            if (s.name.Equals(carta.Genero.Nombre))
+            {
+                panelDondeSeMuestraElTexto.sprite = s;
+            }
+        }
         texto.text = carta.Texto;
     }
 
