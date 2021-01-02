@@ -4,27 +4,24 @@ using UnityEngine;
 public class Baraja : IBaraja
 {
     public List<ICarta> Cartas { get; set; }
-    public List<IGenero> Generos { get; set; }
     public bool SePuedeRepetirCarta { get; set; }
 
     public Baraja(List<ICarta> listaDeCartas)
     {
         Cartas = listaDeCartas;
-
-        Generos = new List<IGenero>();
-        foreach(ICarta carta in listaDeCartas)
-        {
-            if (!Generos.Contains(carta.Genero))
-            {
-                Generos.Add(carta.Genero);
-            }
-        }
     }
 
     public ICarta TomarCarta()
     {
-        return Cartas[RandomLocal(0, Cartas.Count)];
-    }
+        if (Cartas.Count <= 0)
+        {
+            throw new NoHayCartasException("No hay mas cartas que elegir");
+        }
+        int index = RandomLocal(0, Cartas.Count);
+        ICarta cartaElejida = Cartas[index];
+        Cartas.RemoveAt(index);
+        return cartaElejida;
+    }        
 
     private int RandomLocal(int min, int max)
     {
