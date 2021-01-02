@@ -13,6 +13,11 @@ public class LogicaDeLaSeleccionDeJuego : MonoBehaviour, ILogicaParaSeleccionarJ
         ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(-1);
     }
 
+    private void Awake()
+    {
+        Screen.orientation = ScreenOrientation.Landscape;
+    }
+
     private void Start()
     {
         seleccionadorDeJuego = new LogicaParaSeleccionarJuego(this);

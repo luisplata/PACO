@@ -19,6 +19,7 @@ public class InstallerServiceLocator : MonoBehaviour
         var buscador = new BusquedaDeCartasDesdeWebService();
         ServiceLocator.Instance.RegisterService<IBuscadorDeCartasGuardadas>(buscador);
         ServiceLocator.Instance.RegisterService<IBuscadorDeTextosParaRuleta>(buscador);
+        ServiceLocator.Instance.RegisterService<IBuscadorDeTextosPorJuego>(buscador);
         var transiciones = new TransicionEscena(cortina);
         ServiceLocator.Instance.RegisterService<ITransicionEscenaMono>(transiciones);
     }

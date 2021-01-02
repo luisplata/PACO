@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ruleta/JuegoRuleta.unity
     guid: db34db0e8f045f14f85ba4479a01b932
+  - enabled: 1
+    path: Assets/Scenes/Pictonary Borracho/Pictonary.unity
+    guid: b8b76a93a06e6264582c1f9bcc811487
   m_configObjects: {}
