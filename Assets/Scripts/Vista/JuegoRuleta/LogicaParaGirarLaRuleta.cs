@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TMPro;
 
 public class LogicaParaGirarLaRuleta
@@ -11,7 +12,12 @@ public class LogicaParaGirarLaRuleta
     public LogicaParaGirarLaRuleta(ISeleccionadorDeCartasMono seleccionadorDeCartasMono, TextMeshProUGUI texto)
     {
         this.seleccionadorDeCartasMono = seleccionadorDeCartasMono;
-        var generosGuardados = ServiceLocator.Instance.GetService<IGuardadoDeGeneros>().GenerosGuardados;
+        //Esta forma de acceder a los generos es para cuando tengamos mas de una. de momento solo tenemos un genero "Normal"
+        //var generosGuardados = ServiceLocator.Instance.GetService<IGuardadoDeGeneros>().GenerosGuardados;
+        var generosGuardados = new List<IGenero>
+        {
+            new Genero("Normal")
+        };
         var cartasPorGenero = ServiceLocator.Instance.GetService<ICreadorDeBaraja>().CrearOpcionesDeRuletaPorGenero(generosGuardados);
         baraja = new Baraja(cartasPorGenero);
         this.texto = texto;
