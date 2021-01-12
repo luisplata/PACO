@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using TMPro;
+﻿using System.Collections.Generic;
 
 public class LogicaParaGirarLaRuleta
 {
 
     private IBaraja baraja;
     private ISeleccionadorDeCartasMono seleccionadorDeCartasMono;
-    private TextMeshProUGUI texto;
 
-    public LogicaParaGirarLaRuleta(ISeleccionadorDeCartasMono seleccionadorDeCartasMono, TextMeshProUGUI texto)
+    public LogicaParaGirarLaRuleta(ISeleccionadorDeCartasMono seleccionadorDeCartasMono)
     {
         this.seleccionadorDeCartasMono = seleccionadorDeCartasMono;
         //Esta forma de acceder a los generos es para cuando tengamos mas de una. de momento solo tenemos un genero "Normal"
@@ -19,24 +16,18 @@ public class LogicaParaGirarLaRuleta
             new Genero("Normal")
         };
         var cartasPorGenero = ServiceLocator.Instance.GetService<ICreadorDeBaraja>().CrearOpcionesDeRuletaPorGenero(generosGuardados);
-        baraja = new Baraja(cartasPorGenero);
-        this.texto = texto;
+        baraja = new BarajaRuleta(cartasPorGenero);
     }
 
-    internal void SeleccionaUnaOpcion()
+    public void SeleccionaUnaOpcion()
     {
-        ColocarTextoDeLaCartaSeleccionada(baraja.TomarCarta());
-    }
-
-
-    public void ColocarTextoDeLaCartaSeleccionada(ICarta carta)
-    {
-        texto.text = carta.Texto;
+        ICarta cartaWin = baraja.TomarCarta();
+        seleccionadorDeCartasMono.ColocarTextoDeLaCartaSeleccionada(cartaWin, baraja);
     }
 
     public void DeboIrHaciaAtras(bool deboIrmeHAciaAtras)
     {
         if(deboIrmeHAciaAtras)
-            ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(3);
+            ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(0);
     }
 }

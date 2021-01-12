@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +6,7 @@ public class GiradorDeRuleta : MonoBehaviour, ISeleccionadorDeCartasMono
 {
     [SerializeField] private Button seleccionDeCarta;
     [SerializeField] private TextMeshProUGUI texto;
+    [SerializeField] private AnimacionesDeLaRuleta animacionesDeRuleta;
     private LogicaParaGirarLaRuleta logica;
 
     private void Awake()
@@ -17,7 +16,7 @@ public class GiradorDeRuleta : MonoBehaviour, ISeleccionadorDeCartasMono
     // Start is called before the first frame update
     void Start()
     {
-        logica = new LogicaParaGirarLaRuleta(this, texto);
+        logica = new LogicaParaGirarLaRuleta(this);
         seleccionDeCarta.onClick.AddListener(() =>
         {
             logica.SeleccionaUnaOpcion();
@@ -28,4 +27,10 @@ public class GiradorDeRuleta : MonoBehaviour, ISeleccionadorDeCartasMono
     {
         logica.DeboIrHaciaAtras(Input.GetKeyDown(KeyCode.Escape));
     }
+
+    public void ColocarTextoDeLaCartaSeleccionada(ICarta carta, IBaraja baraja)
+    {
+        animacionesDeRuleta.Init(baraja, carta);
+    }
+
 }

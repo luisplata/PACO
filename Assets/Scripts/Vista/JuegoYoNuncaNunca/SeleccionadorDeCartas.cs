@@ -36,4 +36,9 @@ public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
 
     public void MostrarTexto() => logica.ColocarTextoDeLaCartaSeleccionada();
     public void MostrarTextoRevesDeCarta() => logica.ColocandoElRevezDeLaCarta();
+
+    public void ColocarTextoDeLaCartaSeleccionada(ICarta carta, IBaraja baraja)
+    {
+        throw new System.NotImplementedException();
+    }
 }

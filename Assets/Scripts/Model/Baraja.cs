@@ -11,7 +11,7 @@ public class Baraja : IBaraja
         Cartas = listaDeCartas;
     }
 
-    public ICarta TomarCarta()
+    public virtual ICarta TomarCarta()
     {
         if (Cartas.Count <= 0)
         {
@@ -23,7 +23,7 @@ public class Baraja : IBaraja
         return cartaElejida;
     }        
 
-    private int RandomLocal(int min, int max)
+    protected int RandomLocal(int min, int max)
     {
         return Random.Range(min, max);
     }
