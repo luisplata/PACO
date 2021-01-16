@@ -16,7 +16,11 @@ public class AnimacionesDeLaRuleta : MonoBehaviour, IAnimacionesDeRuletaMono
     }
     public void StartAnimation()
     {
-        anim.SetTrigger("start");
+        if (logica.VolverAnimar)
+        {
+            logica.VolverAnimar = false;
+            anim.SetTrigger("start");
+        }
     }
 
     public void CambioDeTextosParaRuleta()
@@ -46,5 +50,10 @@ public class AnimacionesDeLaRuleta : MonoBehaviour, IAnimacionesDeRuletaMono
     private void ColocandoCartaWin()
     {
         listaDeTextos[0].text = cartaWin.Texto;
+    }
+
+    public void TerminandoAnimacionDeRuleta()
+    {
+        logica.VolverAnimar = true;
     }
 }
