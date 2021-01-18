@@ -8,6 +8,8 @@ public class AnimacionesDeLaRuleta : MonoBehaviour, IAnimacionesDeRuletaMono
     private IBaraja baraja;
     private ICarta cartaWin;
     private LogicaDeAnimaciones logica;
+    public AudioSource source;
+    public AudioClip clip;
 
     private void Start()
     {
@@ -55,5 +57,10 @@ public class AnimacionesDeLaRuleta : MonoBehaviour, IAnimacionesDeRuletaMono
     public void TerminandoAnimacionDeRuleta()
     {
         logica.VolverAnimar = true;
+    }
+
+    public void EjecucionDeSonidoDeRuletaAlGirar()
+    {
+        source.PlayOneShot(clip);
     }
 }
