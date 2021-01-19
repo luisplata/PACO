@@ -61,6 +61,6 @@ public class AnimacionesDeLaRuleta : MonoBehaviour, IAnimacionesDeRuletaMono
 
     public void EjecucionDeSonidoDeRuletaAlGirar()
     {
-        source.PlayOneShot(clip);
+        ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("ruleta");
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class InstallerServiceLocator : MonoBehaviour
 {
     [SerializeField] private Image cortina;
+    [SerializeField] private AudioPacoConfiguration audioPacoConfiguration;
+    [SerializeField] private AudioSource audioSource;
     private void Awake()
     {
         if(FindObjectsOfType<InstallerServiceLocator>().Length > 1)
@@ -22,5 +24,7 @@ public class InstallerServiceLocator : MonoBehaviour
         ServiceLocator.Instance.RegisterService<IBuscadorDeTextosPorJuego>(buscador);
         var transiciones = new TransicionEscena(cortina);
         ServiceLocator.Instance.RegisterService<ITransicionEscenaMono>(transiciones);
+        var systemOfAudio = new SonidosUnity(Instantiate(audioPacoConfiguration), audioSource);
+        ServiceLocator.Instance.RegisterService<IPlaySoundEfect>(systemOfAudio);
     }
 }
