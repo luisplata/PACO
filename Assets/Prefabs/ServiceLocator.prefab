@@ -255,7 +255,7 @@ MonoBehaviour:
   audioSource: {fileID: 606939824}
   playstoreId: 3980789
   listaDepublicidades:
-  - banner
+  - video
 --- !u!82 &606939824
 AudioSource:
   m_ObjectHideFlags: 0
