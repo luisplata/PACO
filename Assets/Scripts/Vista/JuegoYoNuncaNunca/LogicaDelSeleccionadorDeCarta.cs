@@ -84,4 +84,9 @@ public class LogicaDelSeleccionadorDeCarta
         if (deboIrmeHAciaAtras)
             ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(1);
     }
+
+    public void ColocandoSonidoDuranteLaVueltaDeLaCarta()
+    {
+        ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("cartaGirando");
+    }
 }

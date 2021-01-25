@@ -40,6 +40,11 @@ public class LogicaDelJuegoPictonary
         baraja = new Baraja(cartas);
     }
 
+    internal void SonarCarton()
+    {
+        ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("cartonPictonary");
+    }
+
     public void IrHaciaAtras(bool isAtras)
     {
         if (isAtras)

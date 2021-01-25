@@ -43,5 +43,6 @@ public class ReglasDelJuegoPictonary : MonoBehaviour, IReglasDelJuegoPictonary
 
     public void VolverEmpezar() => logica.VolverEmpezar();
 
+    public void EjecutarSonidoDePictonary() => logica.SonarCarton();
 
 }

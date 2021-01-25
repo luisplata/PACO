@@ -35,6 +35,8 @@ public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
     }
 
     public void MostrarTexto() => logica.ColocarTextoDeLaCartaSeleccionada();
+
+    public void SonarVolteoDeCarta() => logica.ColocandoSonidoDuranteLaVueltaDeLaCarta();
     public void MostrarTextoRevesDeCarta() => logica.ColocandoElRevezDeLaCarta();
 
     public void ColocarTextoDeLaCartaSeleccionada(ICarta carta, IBaraja baraja)
