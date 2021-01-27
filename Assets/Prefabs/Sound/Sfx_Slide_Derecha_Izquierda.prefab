@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8027461800018698067}
   - component: {fileID: 8027461800018698066}
   m_Layer: 0
-  m_Name: Sfx_ruleta
+  m_Name: Sfx_Slide_Derecha_Izquierda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b9cc0fed23b33418b63a7323725374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: ruleta
-  clip: {fileID: 8300000, guid: 647becb30d897a8468596ba8a76ded43, type: 3}
+  id: Slide_Derecha_Izquierda
+  clip: {fileID: 8300000, guid: a9c4a40248367c34284cd5bc11500288, type: 3}
