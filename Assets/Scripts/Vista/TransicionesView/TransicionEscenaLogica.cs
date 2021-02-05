@@ -25,6 +25,7 @@ public class TransicionEscenaLogica
     public void OnTransicionExit(int indexScene)
     {
         IndexScene = indexScene;
+        ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Slide_Derecha_Izquierda");
         ComienzaTransicionSalida().WrapErrors();
     }
 

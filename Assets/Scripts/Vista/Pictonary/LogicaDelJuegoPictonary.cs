@@ -78,7 +78,7 @@ public class LogicaDelJuegoPictonary
                     deltaDelSegundo = 0;
                     cronometro.text = SeteandoTextoParaCronometro();
                     //Aqui va el sonido
-                    ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("");
+                    ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Reloj");
                 }
                 if(tiempoDeAumentoDeTrago >= tiempoParametrizadoParaCadaAumento)
                 {
