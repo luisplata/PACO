@@ -57,21 +57,29 @@ public class LogicaDelJuegoPictonary
     {
         loQueTieneQueDibujar.text = "Presiona la pantalla para empezar";
     }
-
+    int tiempoDelSegundo = 1;
+    float deltaDelSegundo = 0;
     public void CalculoDelTiempo(float deltaTime)
     {
         if (controlDePasos == 1 && clickDisponible)
         {
             tiempoTranscurrido += deltaTime;
             tiempoDeAumentoDeTrago += deltaTime;
-            cronometro.text = SeteandoTextoParaCronometro();
-            if(tiempoTranscurrido >= tiempoMaximoPorPartida)
+            deltaDelSegundo += deltaTime;
+            if (tiempoTranscurrido >= tiempoMaximoPorPartida)
             {
                 clickDisponible = false;
                 animaciones.SetTrigger("finDelTiempo");
             }
             else
             {
+                if(deltaDelSegundo >= tiempoDelSegundo)
+                {
+                    deltaDelSegundo = 0;
+                    cronometro.text = SeteandoTextoParaCronometro();
+                    //Aqui va el sonido
+                    ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("");
+                }
                 if(tiempoDeAumentoDeTrago >= tiempoParametrizadoParaCadaAumento)
                 {
                     tiempoDeAumentoDeTrago = 0;
