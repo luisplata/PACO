@@ -253,6 +253,11 @@ MonoBehaviour:
   audioPacoConfiguration: {fileID: 11400000, guid: b68656d5eb0f10841b9abd8f5270f5aa,
     type: 2}
   audioSource: {fileID: 606939824}
+  playstoreId: 3980789
+  listaDepublicidades:
+  - video
+  - rewardedVideo
+  isTestMode: 0
 --- !u!82 &606939824
 AudioSource:
   m_ObjectHideFlags: 0

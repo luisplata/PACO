@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: ruleta
-  clip: {fileID: 8300000, guid: 2fd40ba273ca1dd439f7a5015aa5cbd1, type: 3}
+  clip: {fileID: 8300000, guid: 647becb30d897a8468596ba8a76ded43, type: 3}

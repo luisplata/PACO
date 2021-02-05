@@ -39,6 +39,8 @@ public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
     public void SonarVolteoDeCarta() => logica.ColocandoSonidoDuranteLaVueltaDeLaCarta();
     public void MostrarTextoRevesDeCarta() => logica.ColocandoElRevezDeLaCarta();
 
+    public void CartaGirando1() => ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("CartaGirando1");
+    public void CartaGirando2() => ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("CartaGirando2");
     public void ColocarTextoDeLaCartaSeleccionada(ICarta carta, IBaraja baraja)
     {
         throw new System.NotImplementedException();

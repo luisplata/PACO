@@ -2,7 +2,6 @@ name: GenerandoBuilds
 
 on:
   push: { branches: [main,publicidadDeUnity,publicidadEnBanner,publicidadVideoPoderQuitar,publicidadFullVideoSinPoderQuitar] }
-
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
