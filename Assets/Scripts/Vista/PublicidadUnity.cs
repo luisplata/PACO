@@ -17,7 +17,10 @@ public class PublicidadUnity : IPublicidad
         var addId = GetAddId();
         if (Advertisement.IsReady(addId))
         {
-            Advertisement.Show(addId);
+            if(Random.Range(0, 100) < ServiceLocator.Instance.GetService<IServerData>().GetIntDataFromServer("advertising"))
+            {
+                Advertisement.Show(addId);
+            }
         }
     }
 

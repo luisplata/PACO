@@ -39,5 +39,7 @@ public class InstallerServiceLocator : MonoBehaviour
         ServiceLocator.Instance.RegisterService<IPlaySoundEfect>(systemOfAudio);
         var publicidad = new PublicidadUnity(playstoreId, listaDepublicidades, isTestMode);
         ServiceLocator.Instance.RegisterService<IPublicidad>(publicidad);
+        var servidor = new BuscarDatosDeServidor();
+        ServiceLocator.Instance.RegisterService<IServerData>(servidor);
     }
 }
