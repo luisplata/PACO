@@ -30,7 +30,7 @@ public class TransicionEscenaLogica
 
     public void OnTransicionEnter()
     {
-        ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Slide_Derecha_Izquierda");
+        ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Slide_Derecha_Izquierda"); 
         ComienzaTransicionEntrada().WrapErrors();
     }
 
