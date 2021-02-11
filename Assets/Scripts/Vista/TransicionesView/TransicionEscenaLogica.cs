@@ -17,7 +17,7 @@ public class TransicionEscenaLogica
         this.transicionEscenaMono = transicionEscenaMono;
         Assert.IsNotNull(cortina, "La cortina, osea la imagen, es nula. Agregala al Script de la transicion");
         this.cortina = cortina;
-        curtOff = this.hasEnter ? 1 : 0;
+        curtOff = hasEnter ? 1 : 0;
         this.cortina.material.SetFloat("_Cutoff", curtOff);
     }
 
@@ -25,12 +25,12 @@ public class TransicionEscenaLogica
     public void OnTransicionExit(int indexScene)
     {
         IndexScene = indexScene;
-        ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Slide_Derecha_Izquierda");
         ComienzaTransicionSalida().WrapErrors();
     }
 
     public void OnTransicionEnter()
     {
+        ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Slide_Derecha_Izquierda");
         ComienzaTransicionEntrada().WrapErrors();
     }
 
