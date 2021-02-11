@@ -14,7 +14,7 @@ public class LogicaDelJuegoPictonary
     private IReglasDelJuegoPictonary reglasDelJuegoPictonary;
     private bool clickDisponible;
     private float tiempoTranscurrido;
-    private int controlDePasos;
+    public int controlDePasos;
     private float tiempoMaximoPorPartida;
     private IBaraja baraja;
     private float tiempoDeAumentoDeTrago, tiempoParametrizadoParaCadaAumento;

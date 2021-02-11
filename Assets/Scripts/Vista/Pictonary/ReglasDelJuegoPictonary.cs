@@ -25,6 +25,7 @@ public class ReglasDelJuegoPictonary : MonoBehaviour, IReglasDelJuegoPictonary
     {
         logica.CalculoDelTiempo(Time.deltaTime);
         logica.IrHaciaAtras(Input.GetKeyDown(KeyCode.Escape));
+        Debug.Log("paso: " + logica.controlDePasos);
     }
 
     private void Awake()
