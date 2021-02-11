@@ -11,6 +11,10 @@ internal class LogicaDeSeleccionadorDeGenero
     {
         this.listaDeGenerosSeleccionables = listaDeGenerosSeleccionables;
         this.seleccionDeGenero = seleccionDeGenero;
+        foreach (Toggle toggle in listaDeGenerosSeleccionables)
+        {
+            toggle.onValueChanged.AddListener(delegate { ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Click"); });
+        }
     }
 
     public void ListaDeGenerosSeleccionados()

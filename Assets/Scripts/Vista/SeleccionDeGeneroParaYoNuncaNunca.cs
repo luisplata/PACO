@@ -24,6 +24,7 @@ public class SeleccionDeGeneroParaYoNuncaNunca : SeleccionDeGenero
 
     protected override void LoQueDebeHacerElBotonCuandoTerminenDeSeleccionarLosGeneros()
     {
+        ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Click");
         logica.ListaDeGenerosSeleccionados();
     }
 
