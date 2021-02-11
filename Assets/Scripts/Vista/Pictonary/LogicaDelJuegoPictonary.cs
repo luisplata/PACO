@@ -97,15 +97,15 @@ public class LogicaDelJuegoPictonary
 
     public void FinDelJuego()
     {
-        controlDePasos = 2;
         SetearTextoDeInicio();
     }
 
     public void VolverEmpezar()
     {
-        controlDePasos = 0;
         clickDisponible = true;
         SeteandoActividadDeCamposVisibles(false);
+        tiempoTranscurrido = 0;
+        deltaDelSegundo = 0;
     }
 
     private string SeteandoTextoParaCronometro()
@@ -124,11 +124,24 @@ public class LogicaDelJuegoPictonary
             case 0:
                 animaciones.SetTrigger("ready");
                 break;
+            case 1:
+                animaciones.SetTrigger("finDelTiempo");
+                break;
             case 2:
                 animaciones.SetTrigger("volverEmpezar");
                 controlDePasos = 0;
                 break;
         }
+    }
+
+    public void IncrementCase()
+    {
+        controlDePasos++;
+    }
+
+    public void StartAgain()
+    {
+        controlDePasos = 0;
     }
 
     public void Ready()
@@ -147,7 +160,6 @@ public class LogicaDelJuegoPictonary
         loQueTieneQueDibujar.text = baraja.TomarCarta().Texto;
         loQueTieneQueDibujar.fontSize = 50;
         tiempoTranscurrido = 0;
-        controlDePasos = 1;
         cronometro.text = SeteandoTextoParaCronometro();
         cantidadDeTragos.text = SeteandoCantidadDeTragosAcumulados();
         SeteandoActividadDeCamposVisibles(true);

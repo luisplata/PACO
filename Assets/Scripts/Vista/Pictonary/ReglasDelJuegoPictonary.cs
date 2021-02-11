@@ -45,4 +45,7 @@ public class ReglasDelJuegoPictonary : MonoBehaviour, IReglasDelJuegoPictonary
 
     public void EjecutarSonidoDePictonary() => logica.SonarCarton();
 
+    public void StartAgain() => logica.StartAgain();
+
+    public void IncrementCase() => logica.IncrementCase();
 }
