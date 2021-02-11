@@ -70,23 +70,22 @@ public class LogicaDelJuegoPictonary
             {
                 clickDisponible = false;
                 animaciones.SetTrigger("finDelTiempo");
+                return;
             }
-            else
+            if(deltaDelSegundo >= tiempoDelSegundo)
             {
-                if(deltaDelSegundo >= tiempoDelSegundo)
-                {
-                    deltaDelSegundo = 0;
-                    cronometro.text = SeteandoTextoParaCronometro();
-                    //Aqui va el sonido
-                    ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Reloj");
-                }
-                if(tiempoDeAumentoDeTrago >= tiempoParametrizadoParaCadaAumento)
-                {
-                    tiempoDeAumentoDeTrago = 0;
-                    cantidadDeTragosAcumulados++;
-                    cantidadDeTragos.text = SeteandoCantidadDeTragosAcumulados();
-                }
+                deltaDelSegundo = 0;
+                cronometro.text = SeteandoTextoParaCronometro();
+                //Aqui va el sonido
+                ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Reloj");
             }
+            if(tiempoDeAumentoDeTrago >= tiempoParametrizadoParaCadaAumento)
+            {
+                tiempoDeAumentoDeTrago = 0;
+                cantidadDeTragosAcumulados++;
+                cantidadDeTragos.text = SeteandoCantidadDeTragosAcumulados();
+            }
+            
         }
     }
 
