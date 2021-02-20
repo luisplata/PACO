@@ -22,6 +22,7 @@
 
     public void LoQueDebeHacerElBotonCuandoEsPrecionado(int escena)
     {
+        ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Click");
         ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion(escena);
     }
 }
