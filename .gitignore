@@ -59,4 +59,4 @@ sysinfo.txt
 crashlytics-build.properties
 
 #Adding setting proyect for the publish
-ProjectSettings/ProjectSettings.asset
+/ProjectSettings/ProjectSettings.asset
