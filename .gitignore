@@ -58,3 +58,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+#Adding setting proyect for the publish
+ProjectSettings/ProjectSettings.asset
