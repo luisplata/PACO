@@ -19,6 +19,7 @@ public class ReglasDelJuegoPictonary : MonoBehaviour, IReglasDelJuegoPictonary
         {
             logica.BotonPresionado();
         });
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
 
     private void Update()
