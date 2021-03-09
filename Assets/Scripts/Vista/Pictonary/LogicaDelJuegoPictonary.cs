@@ -160,6 +160,9 @@ public class LogicaDelJuegoPictonary
         loQueTieneQueDibujar.fontSize = 50;
         tiempoTranscurrido = 0;
         cronometro.text = SeteandoTextoParaCronometro();
+        cantidadDeTragosAcumulados = 0; 
+        tiempoDeAumentoDeTrago = 0;
+        tiempoParametrizadoParaCadaAumento = 0;
         cantidadDeTragos.text = SeteandoCantidadDeTragosAcumulados();
         SeteandoActividadDeCamposVisibles(true);
     }

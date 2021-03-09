@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8027461800018698067}
   - component: {fileID: 8027461800018698066}
   m_Layer: 0
-  m_Name: Sfx_Reloj
+  m_Name: Sfx_CartaGirando1_Pic_Chiflar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b9cc0fed23b33418b63a7323725374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: Reloj
-  clip: {fileID: 8300000, guid: 812429afb5c5ba04e9661a22afe81973, type: 3}
+  id: CartaGirando1_Pic_Chiflar2
+  clip: {fileID: 8300000, guid: 90156863b9ed1ec4ebc3022ca16cb2bb, type: 3}
