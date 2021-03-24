@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class LogicaDelJuegoPictonary
 {
-    private TextMeshProUGUI cantidadDeTragos;
-    private TextMeshProUGUI cronometro;
-    private TextMeshProUGUI loQueTieneQueDibujar;
-    private Image iconoCerveza;
-    private Animator animaciones;
+    private readonly TextMeshProUGUI cantidadDeTragos;
+    private readonly TextMeshProUGUI cronometro;
+    private readonly TextMeshProUGUI loQueTieneQueDibujar;
+    private readonly Image iconoCerveza;
+    private readonly Animator animaciones;
     private IReglasDelJuegoPictonary reglasDelJuegoPictonary;
     private bool clickDisponible;
     private float tiempoTranscurrido;
@@ -19,6 +19,8 @@ public class LogicaDelJuegoPictonary
     private IBaraja baraja;
     private float tiempoDeAumentoDeTrago, tiempoParametrizadoParaCadaAumento;
     private int cantidadDeTragosAcumulados;
+    private int tiempoDelSegundo = 1;
+    private float deltaDelSegundo = 0;
 
     public LogicaDelJuegoPictonary(IReglasDelJuegoPictonary reglasDelJuegoPictonary, TextMeshProUGUI cantidadDeTragos, TextMeshProUGUI cronometro, TextMeshProUGUI loQueTieneQueDibujar, Image iconoCerveza, Animator animaciones, float tiempoMaximoPorPartida, float tiempoParametrizado)
     {
@@ -30,6 +32,7 @@ public class LogicaDelJuegoPictonary
         this.animaciones = animaciones;
         this.tiempoMaximoPorPartida = tiempoMaximoPorPartida;
         this.tiempoParametrizadoParaCadaAumento = tiempoParametrizado;
+        Debug.Log($"tiempoParametrizado {tiempoParametrizado}");
 
         SetearTextoDeInicio();
 
@@ -57,8 +60,6 @@ public class LogicaDelJuegoPictonary
     {
         loQueTieneQueDibujar.text = "Presiona la pantalla para empezar";
     }
-    int tiempoDelSegundo = 1;
-    float deltaDelSegundo = 0;
     public void CalculoDelTiempo(float deltaTime)
     {
         if (controlDePasos == 1 && clickDisponible)
@@ -79,13 +80,12 @@ public class LogicaDelJuegoPictonary
                 //Aqui va el sonido
                 ServiceLocator.Instance.GetService<IPlaySoundEfect>().PlayOneShot("Reloj");
             }
-            if(tiempoDeAumentoDeTrago >= tiempoParametrizadoParaCadaAumento)
-            {
-                tiempoDeAumentoDeTrago = 0;
-                cantidadDeTragosAcumulados++;
-                cantidadDeTragos.text = SeteandoCantidadDeTragosAcumulados();
-            }
-            
+            Debug.Log($"tiempoParametrizadoParaCadaAumento {tiempoParametrizadoParaCadaAumento}");
+            if (!(tiempoDeAumentoDeTrago >= tiempoParametrizadoParaCadaAumento)) return;
+            tiempoDeAumentoDeTrago = 0;
+            cantidadDeTragosAcumulados++;
+            cantidadDeTragos.text = SeteandoCantidadDeTragosAcumulados();
+
         }
     }
 
@@ -162,7 +162,6 @@ public class LogicaDelJuegoPictonary
         cronometro.text = SeteandoTextoParaCronometro();
         cantidadDeTragosAcumulados = 0; 
         tiempoDeAumentoDeTrago = 0;
-        tiempoParametrizadoParaCadaAumento = 0;
         cantidadDeTragos.text = SeteandoCantidadDeTragosAcumulados();
         SeteandoActividadDeCamposVisibles(true);
     }
