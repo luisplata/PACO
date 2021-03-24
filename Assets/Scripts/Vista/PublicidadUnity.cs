@@ -9,19 +9,19 @@ public class PublicidadUnity : IPublicidad
     {
         this.listaDepublicidades = listaDepublicidades;
 
-        Advertisement.Initialize(playStoreid, isTestMode);
+        //Advertisement.Initialize(playStoreid, isTestMode);
     }
 
     public void ShowAdd()
     {
         var addId = GetAddId();
-        if (Advertisement.IsReady(addId))
+        /*if (Advertisement.IsReady(addId))
         {
             if(Random.Range(0, 100) < ServiceLocator.Instance.GetService<IServerData>().GetIntDataFromServer("advertising"))
             {
                 Advertisement.Show(addId);
             }
-        }
+        }*/
     }
 
     private string GetAddId()
