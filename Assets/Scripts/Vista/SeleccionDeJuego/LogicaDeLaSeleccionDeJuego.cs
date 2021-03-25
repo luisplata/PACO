@@ -25,6 +25,7 @@ public class LogicaDeLaSeleccionDeJuego : MonoBehaviour, ILogicaParaSeleccionarJ
                 seleccionadorDeJuego.LoQueDebeHacerElBotonCuandoEsPrecionado(j.Escena);
             });
         }
+        //Aqui denemos cargar los datos de la web
     }
     private void Update()
     {
