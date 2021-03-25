@@ -29,22 +29,20 @@ public class InstallerServiceLocator : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
         
-        StartCoroutine(ConectionRestBellseboss.GetRequest($"{endpoint}YoNuncaNunca.json", (a) =>
+        StartCoroutine(ConectionRestBellseboss.GetRequest($"{endpoint}YoNuncaNunca.json", (yoNuncaNunca) =>
         {
-            Debug.Log(a);
-            var buscador = new BusquedaDeCartasDesdeWebService(a,a,a);
-            ServiceLocator.Instance.RegisterService<IBuscadorDeCartasGuardadas>(buscador);
-            ServiceLocator.Instance.RegisterService<IBuscadorDeTextosParaRuleta>(buscador);
-            ServiceLocator.Instance.RegisterService<IBuscadorDeTextosPorJuego>(buscador);
+            StartCoroutine(ConectionRestBellseboss.GetRequest($"{endpoint}Pictonary.json", (pictonary) =>
+            {
+                StartCoroutine(ConectionRestBellseboss.GetRequest($"{endpoint}Ruleta.json", (ruleta) =>
+                {
+                    var buscador = new BusquedaDeCartasDesdeWebService(yoNuncaNunca,ruleta,pictonary);
+                    ServiceLocator.Instance.RegisterService<IBuscadorDeCartasGuardadas>(buscador);
+                    ServiceLocator.Instance.RegisterService<IBuscadorDeTextosParaRuleta>(buscador);
+                    ServiceLocator.Instance.RegisterService<IBuscadorDeTextosPorJuego>(buscador);
+                }));
+            }));
         }));
-        /*StartCoroutine(ConectionRestBellseboss.GetRequest($"{endpoint}YoNuncaNunca.json", (a) =>
-        {
-            PlayerPrefs.GetString("yoNuncaNunca", a);
-        }));
-        StartCoroutine(ConectionRestBellseboss.GetRequest($"{endpoint}YoNuncaNunca.json", (a) =>
-        {
-            PlayerPrefs.GetString("yoNuncaNunca", a);
-        }));*/
+        
         
         var generos = new GuardadoDeGeneroService();
         ServiceLocator.Instance.RegisterService<IGuardadoDeGeneros>(generos);
