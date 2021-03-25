@@ -39,7 +39,7 @@ public class LogicaDelSeleccionadorDeCarta
             {
                 cartaTomada = baraja.TomarCarta();
             }
-            catch(NoHayCartasException e)
+            catch(NoHayCartasException)
             {
                 var generosGuardados = ServiceLocator.Instance.GetService<IGuardadoDeGeneros>().GenerosGuardados;
                 var cartasPorGenero = ServiceLocator.Instance.GetService<ICreadorDeBaraja>().CrearCartasPorGenero(generosGuardados);
