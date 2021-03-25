@@ -562,6 +562,7 @@ MonoBehaviour:
   - {fileID: 132895459}
   - {fileID: 1073313800}
   - {fileID: 898697438}
+  endPoint: https://luisplata.github.io/PACO/JSON/
 --- !u!1 &898697436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,6 +1363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795045750156284387, guid: 470c073bc4dcde041b4f9c9dd8ee666c,
+        type: 3}
+      propertyPath: endpoint
+      value: https://luisplata.github.io/PACO/JSON/
       objectReference: {fileID: 0}
     - target: {fileID: 8795045750156284387, guid: 470c073bc4dcde041b4f9c9dd8ee666c,
         type: 3}

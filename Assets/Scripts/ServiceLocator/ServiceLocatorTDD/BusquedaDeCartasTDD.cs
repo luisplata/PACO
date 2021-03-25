@@ -14,7 +14,7 @@ namespace Tests
         public void BuscarCartasDesdeUnJson_ObjetoCargadoExitosamente(string genero)
         {
             //Arrage
-            IBuscadorDeCartasGuardadas buscador = new BusquedaDeCartasDesdeWebService();
+            IBuscadorDeCartasGuardadas buscador = new BusquedaDeCartasDesdeWebService("","","");
             //Act
             List<ICarta> listaResultante = buscador.BuscarCartasPorGenero(new Genero(genero));
             //asert

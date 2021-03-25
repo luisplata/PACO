@@ -13,7 +13,7 @@ namespace Tests
         public void CuandoInicieElJuego_SeDebenCargarLosTextosDeLaRuleta(string genero)
         {
             //arrage
-            IBuscadorDeTextosParaRuleta ruleta = new BusquedaDeCartasDesdeWebService();
+            IBuscadorDeTextosParaRuleta ruleta = new BusquedaDeCartasDesdeWebService("","","");
             
             //act
             List<ICarta> listaResultante = ruleta.BuscarTextosPorGenero(new Genero(genero));

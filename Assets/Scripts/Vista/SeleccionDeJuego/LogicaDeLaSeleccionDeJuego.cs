@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LogicaDeLaSeleccionDeJuego : MonoBehaviour, ILogicaParaSeleccionarJuegoMono
 {
     [SerializeField] private List<Juego> listaDeJuegos;
+    [SerializeField] private string endPoint;
     private ILogicaParaSeleccionarJuego seleccionadorDeJuego;
 
 
@@ -25,7 +26,6 @@ public class LogicaDeLaSeleccionDeJuego : MonoBehaviour, ILogicaParaSeleccionarJ
                 seleccionadorDeJuego.LoQueDebeHacerElBotonCuandoEsPrecionado(j.Escena);
             });
         }
-        //Aqui denemos cargar los datos de la web
     }
     private void Update()
     {
