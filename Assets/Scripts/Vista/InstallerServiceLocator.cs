@@ -47,7 +47,6 @@ public class InstallerServiceLocator : MonoBehaviour
         var generos = new GuardadoDeGeneroService();
         ServiceLocator.Instance.RegisterService<IGuardadoDeGeneros>(generos);
         ServiceLocator.Instance.RegisterService<ICreadorDeBaraja>(generos);
-        
         var transiciones = new TransicionEscena(cortina);
         ServiceLocator.Instance.RegisterService<ITransicionEscenaMono>(transiciones);
         var systemOfAudio = new SonidosUnity(Instantiate(audioPacoConfiguration), audioSource);
