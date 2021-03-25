@@ -10,6 +10,7 @@ public class InstallerServiceLocator : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private string playstoreId;
     [SerializeField] private List<string> listaDepublicidades;
+    [SerializeField] private string endpoint;
     private bool isTestMode;
 
     private void Awake()
@@ -26,13 +27,26 @@ public class InstallerServiceLocator : MonoBehaviour
         isTestMode = false;
 #endif
         DontDestroyOnLoad(gameObject);
+        
+        
+        StartCoroutine(ConectionRestBellseboss.GetRequest($"{endpoint}YoNuncaNunca.json", (yoNuncaNunca) =>
+        {
+            StartCoroutine(ConectionRestBellseboss.GetRequest($"{endpoint}Pictonary.json", (pictonary) =>
+            {
+                StartCoroutine(ConectionRestBellseboss.GetRequest($"{endpoint}Ruleta.json", (ruleta) =>
+                {
+                    var buscador = new BusquedaDeCartasDesdeWebService(yoNuncaNunca,ruleta,pictonary);
+                    ServiceLocator.Instance.RegisterService<IBuscadorDeCartasGuardadas>(buscador);
+                    ServiceLocator.Instance.RegisterService<IBuscadorDeTextosParaRuleta>(buscador);
+                    ServiceLocator.Instance.RegisterService<IBuscadorDeTextosPorJuego>(buscador);
+                }));
+            }));
+        }));
+        
+        
         var generos = new GuardadoDeGeneroService();
         ServiceLocator.Instance.RegisterService<IGuardadoDeGeneros>(generos);
         ServiceLocator.Instance.RegisterService<ICreadorDeBaraja>(generos);
-        var buscador = new BusquedaDeCartasDesdeWebService();
-        ServiceLocator.Instance.RegisterService<IBuscadorDeCartasGuardadas>(buscador);
-        ServiceLocator.Instance.RegisterService<IBuscadorDeTextosParaRuleta>(buscador);
-        ServiceLocator.Instance.RegisterService<IBuscadorDeTextosPorJuego>(buscador);
         var transiciones = new TransicionEscena(cortina);
         ServiceLocator.Instance.RegisterService<ITransicionEscenaMono>(transiciones);
         var systemOfAudio = new SonidosUnity(Instantiate(audioPacoConfiguration), audioSource);
@@ -41,5 +55,6 @@ public class InstallerServiceLocator : MonoBehaviour
         ServiceLocator.Instance.RegisterService<IPublicidad>(publicidad);
         var servidor = new BuscarDatosDeServidor();
         ServiceLocator.Instance.RegisterService<IServerData>(servidor);
+
     }
 }
