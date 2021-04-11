@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,13 +11,13 @@ public class LogicaDelSeleccionadorDeCarta
     private ISeleccionadorDeCartasMono seleccionadorDeCartasMono;
     private bool debeMostrarElRevez;
     ICarta cartaTomada;
-    private Image panelDondeSeMuestraElTexto;
+    private SVGImage panelDondeSeMuestraElTexto;
     private TextMeshProUGUI texto;
     private List<Sprite> revezCartasPorGenero;
     private List<Sprite> cartasPorGenero;
     private Animator animator;
 
-    public LogicaDelSeleccionadorDeCarta(ISeleccionadorDeCartasMono seleccionadorDeCartasMono, TextMeshProUGUI texto, Image panelDondeSeMuestraElTexto, List<Sprite> cartasPorGenero, List<Sprite> revezCartasPorGenero, Animator animator)
+    public LogicaDelSeleccionadorDeCarta(ISeleccionadorDeCartasMono seleccionadorDeCartasMono, TextMeshProUGUI texto, SVGImage panelDondeSeMuestraElTexto, List<Sprite> cartasPorGenero, List<Sprite> revezCartasPorGenero, Animator animator)
     {
         this.seleccionadorDeCartasMono = seleccionadorDeCartasMono;
         var generosGuardadosSl = ServiceLocator.Instance.GetService<IGuardadoDeGeneros>().GenerosGuardados;
@@ -62,6 +63,7 @@ public class LogicaDelSeleccionadorDeCarta
             if (s.name.Equals(cartaTomada.Genero.Nombre))
             {
                 panelDondeSeMuestraElTexto.sprite = s;
+                
             }
         }
         texto.text = "";

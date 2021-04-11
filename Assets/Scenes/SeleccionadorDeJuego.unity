@@ -288,8 +288,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -29.83, y: -350.96}
-  m_SizeDelta: {x: 41.771408, y: 41.771408}
+  m_AnchoredPosition: {x: 42.1, y: -350.14}
+  m_SizeDelta: {x: 41.771408, y: 41.771423}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &237468414
 MonoBehaviour:
@@ -408,9 +408,9 @@ RectTransform:
   m_Father: {fileID: 241258624}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -128.61, y: 91.109985}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -87.210014, y: -350.89}
   m_SizeDelta: {x: 40.88188, y: 40.881897}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &446709296
@@ -540,7 +540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -79.35, y: -350.72}
+  m_AnchoredPosition: {x: -21.000002, y: -350.1}
   m_SizeDelta: {x: 41.304443, y: 41.304443}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &881527948
@@ -1411,7 +1411,7 @@ GameObject:
   - component: {fileID: 1933979991}
   - component: {fileID: 1933979990}
   m_Layer: 5
-  m_Name: SVG Image
+  m_Name: Team
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1433,7 +1433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.7, y: -351}
+  m_AnchoredPosition: {x: 109, y: -350.1}
   m_SizeDelta: {x: 41.696808, y: 41.696808}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933979990

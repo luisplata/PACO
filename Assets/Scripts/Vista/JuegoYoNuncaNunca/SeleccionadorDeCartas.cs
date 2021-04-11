@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using TMPro;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,7 +11,7 @@ public class SeleccionadorDeCartas : MonoBehaviour, ISeleccionadorDeCartasMono
     [SerializeField] private TextMeshProUGUI texto;
     [SerializeField] private List<Sprite> cartasPorGenero;
     [SerializeField] private List<Sprite> revezCartasPorGenero;
-    [SerializeField] private Image panelDondeSeMuestraElTexto;
+    [SerializeField] private SVGImage panelDondeSeMuestraElTexto;
     private LogicaDelSeleccionadorDeCarta logica;
     
 
