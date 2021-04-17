@@ -278,8 +278,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Normal
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b4cc183ec7e9d0e40a6afd4512308ea9, type: 2}
-  m_sharedMaterial: {fileID: -4693506332943139570, guid: b4cc183ec7e9d0e40a6afd4512308ea9,
+  m_fontAsset: {fileID: 11400000, guid: b12dd5928662ff144b615e109f2508a4, type: 2}
+  m_sharedMaterial: {fileID: 4982287513790028166, guid: b12dd5928662ff144b615e109f2508a4,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.75
+  m_fontSize: 57.8
   m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -479,8 +479,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Que tan zarpado lo queres
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b12dd5928662ff144b615e109f2508a4, type: 2}
+  m_sharedMaterial: {fileID: 4982287513790028166, guid: b12dd5928662ff144b615e109f2508a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -998,12 +999,12 @@ PrefabInstance:
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 230.47559
+      value: 255.86032
       objectReference: {fileID: 0}
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 67.578705
+      value: 85.80368
       objectReference: {fileID: 0}
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
@@ -1043,12 +1044,12 @@ PrefabInstance:
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -31.16
+      value: -43.85
       objectReference: {fileID: 0}
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 256.74
+      value: 265.85
       objectReference: {fileID: 0}
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
@@ -1456,8 +1457,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Picante
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b4cc183ec7e9d0e40a6afd4512308ea9, type: 2}
-  m_sharedMaterial: {fileID: -4693506332943139570, guid: b4cc183ec7e9d0e40a6afd4512308ea9,
+  m_fontAsset: {fileID: 11400000, guid: b12dd5928662ff144b615e109f2508a4, type: 2}
+  m_sharedMaterial: {fileID: 4982287513790028166, guid: b12dd5928662ff144b615e109f2508a4,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1482,7 +1483,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.95
+  m_fontSize: 57.55
   m_fontSizeBase: 16.34
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1745,8 +1746,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Yo Nunca...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b12dd5928662ff144b615e109f2508a4, type: 2}
+  m_sharedMaterial: {fileID: 4982287513790028166, guid: b12dd5928662ff144b615e109f2508a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1878,8 +1880,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Comenzar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b12dd5928662ff144b615e109f2508a4, type: 2}
+  m_sharedMaterial: {fileID: 4982287513790028166, guid: b12dd5928662ff144b615e109f2508a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

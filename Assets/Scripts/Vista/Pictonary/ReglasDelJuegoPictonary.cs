@@ -1,16 +1,19 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ReglasDelJuegoPictonary : MonoBehaviour, IReglasDelJuegoPictonary
 {
     [SerializeField] private TextMeshProUGUI cantidadDeTragos, cronometro, loQueTieneQueDibujar;
-    [SerializeField] private Image iconoCerveza;
+    [SerializeField] private SVGImage iconoCerveza;
     [SerializeField] private Animator animaciones;
     [SerializeField] private Button botonDeControl;
     [SerializeField] private float tiempoMaximoPorPartida, tiempoPorCadaAumento;
     private LogicaDelJuegoPictonary logica;
+    [SerializeField]private List<GameObject> listOfGo;
 
     private void Start()
     {
@@ -49,4 +52,21 @@ public class ReglasDelJuegoPictonary : MonoBehaviour, IReglasDelJuegoPictonary
     public void StartAgain() => logica.StartAgain();
 
     public void IncrementCase() => logica.IncrementCase();
+    public void ShowGo()
+    {
+        SetActiveFromGo(true);
+    }
+    
+    public void HiddenGo()
+    {
+        SetActiveFromGo(false);
+    }
+
+    private void SetActiveFromGo(bool actived)
+    {
+        foreach (var go in listOfGo)
+        {
+            go.SetActive(actived);
+        }
+    }
 }

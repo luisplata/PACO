@@ -170,12 +170,12 @@ PrefabInstance:
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 230.47559
+      value: 255.86032
       objectReference: {fileID: 0}
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 67.578705
+      value: 85.80368
       objectReference: {fileID: 0}
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
@@ -215,12 +215,12 @@ PrefabInstance:
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -31.16
+      value: -43.85
       objectReference: {fileID: 0}
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 256.74
+      value: 265.85
       objectReference: {fileID: 0}
     - target: {fileID: 4535485166738957928, guid: a2424a41d17a7534691a83968733e9ea,
         type: 3}
@@ -679,8 +679,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Juro solemnemente que mis intenciones no son buenas
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b4cc183ec7e9d0e40a6afd4512308ea9, type: 2}
-  m_sharedMaterial: {fileID: -4693506332943139570, guid: b4cc183ec7e9d0e40a6afd4512308ea9,
+  m_fontAsset: {fileID: 11400000, guid: b12dd5928662ff144b615e109f2508a4, type: 2}
+  m_sharedMaterial: {fileID: 4982287513790028166, guid: b12dd5928662ff144b615e109f2508a4,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -931,8 +931,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Yo Nunca...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b12dd5928662ff144b615e109f2508a4, type: 2}
+  m_sharedMaterial: {fileID: 4982287513790028166, guid: b12dd5928662ff144b615e109f2508a4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -2,8 +2,7 @@
 
 public class RestUtilsException : Exception
 {
-    public RestUtilsException(string s)
+    public RestUtilsException(string message) : base(message)
     {
-        throw new NotImplementedException();
     }
 }

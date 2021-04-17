@@ -961,8 +961,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Previas Argentinas Co.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b4cc183ec7e9d0e40a6afd4512308ea9, type: 2}
-  m_sharedMaterial: {fileID: -4693506332943139570, guid: b4cc183ec7e9d0e40a6afd4512308ea9,
+  m_fontAsset: {fileID: 11400000, guid: b12dd5928662ff144b615e109f2508a4, type: 2}
+  m_sharedMaterial: {fileID: 4982287513790028166, guid: b12dd5928662ff144b615e109f2508a4,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1044,11 +1044,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8795045749754390094, guid: 470c073bc4dcde041b4f9c9dd8ee666c,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8795045750156284384, guid: 470c073bc4dcde041b4f9c9dd8ee666c,
         type: 3}
       propertyPath: m_Name
@@ -1108,16 +1103,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8795045750156284387, guid: 470c073bc4dcde041b4f9c9dd8ee666c,
-        type: 3}
-      propertyPath: endpoint
-      value: https://luisplata.github.io/PACO/JSON/
-      objectReference: {fileID: 0}
-    - target: {fileID: 8795045750156284387, guid: 470c073bc4dcde041b4f9c9dd8ee666c,
-        type: 3}
-      propertyPath: isTestMode
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 470c073bc4dcde041b4f9c9dd8ee666c, type: 3}
@@ -1278,8 +1263,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: P.A.Co
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b6f01234c3825424ba676ea8f1b34048, type: 2}
-  m_sharedMaterial: {fileID: -1023505240949594527, guid: b6f01234c3825424ba676ea8f1b34048,
+  m_fontAsset: {fileID: 11400000, guid: b12dd5928662ff144b615e109f2508a4, type: 2}
+  m_sharedMaterial: {fileID: 4982287513790028166, guid: b12dd5928662ff144b615e109f2508a4,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

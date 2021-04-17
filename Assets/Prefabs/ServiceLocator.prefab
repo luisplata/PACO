@@ -257,7 +257,7 @@ MonoBehaviour:
   listaDepublicidades:
   - video
   - rewardedVideo
-  isTestMode: 0
+  endpoint: https://luisplata.github.io/PACO/JSON/
 --- !u!82 &606939824
 AudioSource:
   m_ObjectHideFlags: 0
