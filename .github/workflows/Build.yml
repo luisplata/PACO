@@ -1,7 +1,9 @@
-name: GenerandoBuilds
+name: Actions 😎
 
 on:
-  push: { branches: [main,publicidadDeUnity,publicidadEnBanner,publicidadVideoPoderQuitar,publicidadFullVideoSinPoderQuitar] }
+  pull_request: {}
+  push: { branches: [main] }
+
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
@@ -13,11 +15,11 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - ./
+          - test-project
         unityVersion:
           - 2019.4.10f1
         targetPlatform:
-          - Android #Android
+          - Android # Build a macOS standalone (Intel 64-bit).
     steps:
       - uses: actions/checkout@v2
         with:
@@ -29,6 +31,15 @@ jobs:
           restore-keys: |
             Library-${{ matrix.projectPath }}-
             Library-
+      - uses: webbertakken/unity-test-runner@v1.7
+        id: testRunner
+        with:
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Test results (all modes)
+          path: ${{ steps.testRunner.outputs.artifactsPath }}
       - uses: webbertakken/unity-builder@v1.5
         with:
           projectPath: ${{ matrix.projectPath }}
