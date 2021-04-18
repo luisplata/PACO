@@ -1,7 +1,6 @@
-name: Actions 😎
+name: GenerandoBuilds
 
 on:
-  pull_request: {}
   push: { branches: [main] }
 
 env:
@@ -15,11 +14,11 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - test-project
+          - ./
         unityVersion:
           - 2019.4.10f1
         targetPlatform:
-          - Android # Build a macOS standalone (Intel 64-bit).
+          - Android #Android
     steps:
       - uses: actions/checkout@v2
         with:
@@ -31,9 +30,17 @@ jobs:
           restore-keys: |
             Library-${{ matrix.projectPath }}-
             Library-
-      - uses: webbertakken/unity-builder@v1.5
+      - uses: webbertakken/unity-test-runner@v1.3
+        id: testRunner
         with:
-          versioning: Semantic
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Test results (all modes)
+          path: ${{ steps.testRunner.outputs.artifactsPath }}
+      - uses: webbertakken/unity-builder@v0.10
+        with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
