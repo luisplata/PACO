@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class LogicaDelJuegoPictonary
     private readonly TextMeshProUGUI cantidadDeTragos;
     private readonly TextMeshProUGUI cronometro;
     private readonly TextMeshProUGUI loQueTieneQueDibujar;
-    private readonly Image iconoCerveza;
+    private readonly SVGImage iconoCerveza;
     private readonly Animator animaciones;
     private IReglasDelJuegoPictonary reglasDelJuegoPictonary;
     private bool clickDisponible;
@@ -22,7 +23,7 @@ public class LogicaDelJuegoPictonary
     private int tiempoDelSegundo = 1;
     private float deltaDelSegundo = 0;
 
-    public LogicaDelJuegoPictonary(IReglasDelJuegoPictonary reglasDelJuegoPictonary, TextMeshProUGUI cantidadDeTragos, TextMeshProUGUI cronometro, TextMeshProUGUI loQueTieneQueDibujar, Image iconoCerveza, Animator animaciones, float tiempoMaximoPorPartida, float tiempoParametrizado)
+    public LogicaDelJuegoPictonary(IReglasDelJuegoPictonary reglasDelJuegoPictonary, TextMeshProUGUI cantidadDeTragos, TextMeshProUGUI cronometro, TextMeshProUGUI loQueTieneQueDibujar, SVGImage iconoCerveza, Animator animaciones, float tiempoMaximoPorPartida, float tiempoParametrizado)
     {
         this.reglasDelJuegoPictonary = reglasDelJuegoPictonary;
         this.cantidadDeTragos = cantidadDeTragos;
@@ -31,8 +32,7 @@ public class LogicaDelJuegoPictonary
         this.iconoCerveza = iconoCerveza;
         this.animaciones = animaciones;
         this.tiempoMaximoPorPartida = tiempoMaximoPorPartida;
-        this.tiempoParametrizadoParaCadaAumento = tiempoParametrizado;
-        Debug.Log($"tiempoParametrizado {tiempoParametrizado}");
+        tiempoParametrizadoParaCadaAumento = tiempoParametrizado;
 
         SetearTextoDeInicio();
 
@@ -171,5 +171,12 @@ public class LogicaDelJuegoPictonary
         iconoCerveza.gameObject.SetActive(i);
         cantidadDeTragos.gameObject.SetActive(i);
         cronometro.gameObject.SetActive(i);
+        if (i)
+        {
+            reglasDelJuegoPictonary.ShowGo();   
+        }else
+        {
+            reglasDelJuegoPictonary.HiddenGo();
+        }
     }
 }
