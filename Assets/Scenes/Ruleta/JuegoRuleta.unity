@@ -3338,11 +3338,6 @@ MonoBehaviour:
   - {fileID: 537172702}
   - {fileID: 752485492}
   - {fileID: 1233985085}
-  - {fileID: 629148946}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   source: {fileID: 0}
   clip: {fileID: 8300000, guid: 2fd40ba273ca1dd439f7a5015aa5cbd1, type: 3}
 --- !u!1 &2008627326
