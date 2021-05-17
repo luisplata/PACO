@@ -22,8 +22,6 @@ jobs:
         with:
           path: Library
           key: Library
-          restore-keys: |
-            Library-
       - uses: game-ci/unity-test-runner@v2
         id: testRunner
         env:
