@@ -21,7 +21,8 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: Library
-          key: Library
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
       - uses: game-ci/unity-test-runner@v2
         id: testRunner
         env:
