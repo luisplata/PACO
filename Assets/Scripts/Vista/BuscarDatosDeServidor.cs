@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 public class BuscarDatosDeServidor : IServerData
 {
@@ -8,7 +9,7 @@ public class BuscarDatosDeServidor : IServerData
 
     public object GetDataFromServer(string name)
     {
-        return null;
+        return PlayerPrefs.GetString(name);
     }
 
     public int GetIntDataFromServer(string name)
