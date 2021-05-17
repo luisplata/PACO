@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Vista;
 
 public class InstallerServiceLocator : MonoBehaviour
 {
@@ -55,6 +56,9 @@ public class InstallerServiceLocator : MonoBehaviour
         ServiceLocator.Instance.RegisterService<IPublicidad>(publicidad);
         var servidor = new BuscarDatosDeServidor();
         ServiceLocator.Instance.RegisterService<IServerData>(servidor);
-
+        var countForGames = new CountsForGames();
+        ServiceLocator.Instance.RegisterService<ICountForGames>(countForGames);
+        var dataSave = new DataSave();
+        ServiceLocator.Instance.RegisterService<IDataSave>(dataSave);
     }
 }
