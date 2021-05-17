@@ -10,17 +10,11 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - test-project
+          - .
         unityVersion:
-          - 2019.4.1f1
-          - 2020.2.1f1
+          - 2019.4.24f1
         targetPlatform:
-          - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
-          - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - StandaloneLinux64 # Build a Linux 64-bit standalone.
-          - iOS # Build an iOS player.
           - Android # Build an Android player.
-          - WebGL # WebGL.
     steps:
       - uses: actions/checkout@v2
         with:
