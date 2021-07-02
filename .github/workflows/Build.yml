@@ -66,10 +66,10 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
           versioning: Semantic
-          buildName: BaseDefender
+          buildName: Paco
           allowDirtyBuild: true
       - name: Rename build
-        run: sudo mv build/Android/BaseDefender.apk build/Android/BaseDefender${{ steps.buildStep.outputs.buildVersion }}.apk
+        run: sudo mv build/Android/Paco.apk build/Android/Paco${{ steps.buildStep.outputs.buildVersion }}.apk
       - uses: actions/upload-artifact@v2
         with:
           name: Build
