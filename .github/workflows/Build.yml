@@ -69,7 +69,7 @@ jobs:
           buildName: Paco
           allowDirtyBuild: true
       - name: Rename build
-        run: sudo mv ${{ matrix.projectPath }}build/Android/Paco.apk ${{ matrix.projectPath }}build/Android/Paco${{ steps.buildStep.outputs.buildVersion }}.apk
+        run: sudo mv "${{ matrix.projectPath }}build/Android/Paco.apk" "${{ matrix.projectPath }}build/Android/Paco${{ steps.buildStep.outputs.buildVersion }}.apk"
       - uses: actions/upload-artifact@v2
         with:
           name: Build
