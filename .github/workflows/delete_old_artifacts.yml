@@ -2,9 +2,6 @@ name: Remove old artifacts
 
 on:
   workflow_dispatch: {}
-  schedule:
-    # Every day at 1am
-    - cron: '0 1 * * *'
 
 jobs:
   remove-old-artifacts:
@@ -12,8 +9,4 @@ jobs:
     timeout-minutes: 10
 
     steps:
-    - name: Remove old artifacts
-      uses: c-hive/gha-remove-artifacts@v1
-      with:
-        age: '14 day'
-        skip-tags: true
+    - uses: jlumbroso/free-disk-space@v1.2.0
