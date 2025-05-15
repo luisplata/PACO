@@ -34,7 +34,7 @@ public class ReglasDelJuegoPictonary : MonoBehaviour, IReglasDelJuegoPictonary
     private void Awake()
     {
         ServiceLocator.Instance.GetService<ITransicionEscenaMono>().OnTransicion();
-        Screen.orientation = ScreenOrientation.Landscape;
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 
     public void Ready() => logica.Ready();
